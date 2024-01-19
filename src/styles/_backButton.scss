@@ -1,0 +1,39 @@
+.backButton {
+  width: 90px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  button.container-back {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: all ease 1s;
+    }
+
+    .buttonImg {
+      width: 80%;
+      filter: invert(1);
+      object-position: center;
+    }
+
+    > span {
+      color: #000;
+      font-size: 15px;
+      text-align: center;
+      text-decoration: none; // Elimina la decoración de subrayado del enlace
+      text-align: center;
+      position: absolute;
+      top: 35%;
+      left: 34%;
+    }
+  }
+}
