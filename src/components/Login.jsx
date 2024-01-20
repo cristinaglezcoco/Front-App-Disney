@@ -4,6 +4,8 @@ import { API } from "./axios/api";
 import { useState } from "react";
 import '../styles/_login.scss'
 import BackButton from "./BackButton";
+import Mickey from '../images/mickeybtt.png'
+
 
 
 function Login () {
@@ -45,21 +47,29 @@ function Login () {
     return (
     <>
 
-        <section className="container-register">
+        <section className="container-login">
 
             <BackButton/>
 
-            <div className='register-img'>
-                <img src={Campanilla} alt='Campanilla' />
+            <div className='container-form'>
+
+                <div className='login-img'>
+                    <img src={Campanilla} alt='Campanilla' />
+                </div>
+
+                <h2>Login</h2>
+
+                <form className='login-form' onSubmit={userLogin}>
+                    <input className="login-info" type="email" placeholder='Email' id='email' onChange={handleInput}/>
+                    <input className="login-info" type="password" placeholder='Password' id='password' onChange={handleInput}/>
+                    <input type="submit" value="Inicia sesión" className='login-button' /> 
+                </form>
+
             </div>
 
-            <h2>Login</h2>
-
-            <form className='register-form' onSubmit={userLogin}>
-                <input className="register-info" type="email" placeholder='Email' id='email' onChange={handleInput}/>
-                <input className="register-info" type="password" placeholder='Password' id='password' onChange={handleInput}/>
-                <input type="submit" value="Inicia sesión" className='register-button' /> 
-            </form>
+            <div className='back-content'>
+                <img src={Mickey} alt='Mickey icon' />
+            </div>
             
         </section>  
         </>

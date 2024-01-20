@@ -1,7 +1,7 @@
 
 
 import { useNavigate, useParams } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import { MoviesContext } from "./context/moviesContext";
 import '../styles/_detailmovie.scss'
 import BackButton from "./BackButton";
@@ -12,14 +12,9 @@ function DetailMovie() {
     const navigate = useNavigate();
     const findMovie = movies.find((movie) => movie._id === id);
 
-    useEffect(() => {
-        // Llamada a navigate() dentro del efecto
-        if (!findMovie) {
-            navigate(-1);
-        }
-    }, [findMovie, navigate]);
 
-   
+
+        if(findMovie) {
         return (
             <>
                 <section className="container-detailmovie">
@@ -55,7 +50,10 @@ function DetailMovie() {
                     </div>
                 </section>
             </>
-        )
+        )} else {
+            navigate(-1);
+            return null;
+        }
 }
 
 export default DetailMovie;

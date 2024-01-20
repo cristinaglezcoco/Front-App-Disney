@@ -20,12 +20,6 @@ function DetailCharacterNew () {
     const findCharacters = characters.find((character) => character.nombre === nombre)
 
 
-    // useEffect(() => {
-    //     if (!findCharacters) {
-    //         navigate(-1);
-    //     }
-    // }, [findCharacters, navigate]);
-
     const revealAllies = (event) =>  {
         event.preventDefault();
         setShowAllies(!showAllies);

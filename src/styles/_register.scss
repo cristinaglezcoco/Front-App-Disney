@@ -1,14 +1,10 @@
 .container-register {
     width: 100%;
-    height: calc(00vh - 200px);
+    height: calc(100vh - 200px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // background-image: url(../images/mickeybtt.png);
-    // background-size: contain;
-    // background-repeat: no-repeat;
-    // background-position: center;
     position: relative;
 
     .backButton {
@@ -17,53 +13,106 @@
         left: 15px;
     }
 
-    
-    .register-img {
-        width: 70px;
-        height: 70px;
-
+    .back-content {
+        width: 95%;
+        max-width: 350px;
+        height: 320px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
 
         img {
             width: 100%;
             height: 100%;
-            filter: invert(1);
-            opacity: 0.9;
         }
     }
 
-    h2{
-        color: white;
-        margin: 5px;
-        font-size: 40px;
-    }
-
-    .register-form {
+    .container-form {
+        width: 90%;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        gap: 15px;
-        background-image: url(../images/mickeybtt.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    
-    
-        .register-info {
-            padding: 5px;
-            border-radius: 10px;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+
+
+        .register-img {
+            width: 60px;
+            height: 60px;
+
+
+            img {
+                width: 100%;
+                height: 100%;
+                filter: invert(1);
+                opacity: 0.9;
+            }
         }
 
-        .register-button {
-            background-color: rgba(255, 255, 255, 0.492);
-            border: 1px solid rgba(255, 255, 255, 0.492);
-            padding: 5px;
-            color: #121343;
-            border-radius: 50%;
-            width: 90px;
+        h2{
+            color: white;
+            margin: 5px;
+            font-size: 40px;
+            width: 100%;
+            text-align: center;
+            transform: translateY(-20px);
+        }
+
+        .register-form {
+            width: 200px;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-15px);
+        
+        
+            .register-info {
+                padding: 5px;
+                border-radius: 10px;
+            }
+
+            .register-button {
+                background-color: rgba(255, 255, 255, 0.492);
+                border: 1px solid rgba(255, 255, 255, 0.492);
+                padding: 5px;
+                color: #121343;
+                border-radius: 50%;
+                width: 90px;
+            }
         }
     }
+}
 
-    
+@media screen and (min-height: 700px) {
+    .container-register {
+
+        .back-content {
+            max-width: 500px;
+            height: 500px;
+        }
+
+        .container-form {
+
+            h2 {
+                transform: translateY(0); 
+            }
+            
+            .register-form {
+                transform: translateY(0);
+
+                .register-info {
+                    width: 180px;
+                }
+            }
+        }
+    }
 }
 

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API } from './axios/api';
 import BackButton from './BackButton';
-
+import Mickey from '../images/mickeybtt.png'
 
 
 function Register () {
@@ -51,17 +51,28 @@ function Register () {
 
             <BackButton/>
 
-            <div className='register-img'>
-                <img src={Campanilla} alt='Campanilla' />
+            {/* <div className='back-content'>
+                <img src={Mickey} alt='Mickey icon' />
+            </div> */}
+
+            <div className='container-form'>
+
+                <div className='register-img'>
+                    <img src={Campanilla} alt='Campanilla' />
+                </div>
+
+                <h2>Registro</h2>
+
+                <form className='register-form' onSubmit={compareUsers}>
+                    <input className="register-info" type="email" placeholder='Email' id='email' onChange={handleInput}/>
+                    <input className="register-info" type="password" placeholder='Password' id='password' onChange={handleInput}/>
+                    <input type="submit" value="Registrarse" className='register-button'/> 
+                </form>
             </div>
 
-            <h2>Registro</h2>
-
-            <form className='register-form' onSubmit={compareUsers}>
-                <input className="register-info" type="email" placeholder='Email' id='email' onChange={handleInput}/>
-                <input className="register-info" type="password" placeholder='Password' id='password' onChange={handleInput}/>
-                <input type="submit" value="Registrarse" className='register-button'/> 
-            </form>
+            <div className='back-content'>
+                <img src={Mickey} alt='Mickey icon' />
+            </div>
             
         </section>  
         </>
