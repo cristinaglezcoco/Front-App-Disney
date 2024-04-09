@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import Campanilla from "../images/campanilla.png"
 import { API } from "./axios/api";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import '../styles/_login.scss'
 import BackButton from "./BackButton";
 import Mickey from '../images/mickeybtt.png'
+import { MoviesContext } from "./context/moviesContext";
 
 
 
@@ -16,6 +17,9 @@ function Login () {
         email: "",
         password: "",
     });
+
+    const { setFavouriteMovies } = useContext(MoviesContext);
+
 
     const handleInput = (event) => {
         const {id, value} = event.target;
@@ -37,6 +41,10 @@ function Login () {
         //   //console.log(result.data.getUser._id);
           localStorage.setItem('token', result.data.token)
           //console.log('Token establecido correctamente:', localStorage.getItem('token'), 'User:', localStorage.getItem('user'));
+          const storedFavourites = JSON.parse(localStorage.getItem("favouriteMovies"));
+          if (storedFavourites) {
+            setFavouriteMovies(storedFavourites);
+          }
           navigate('/myarea');
         } catch (error){
           console.error(error);

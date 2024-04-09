@@ -16,6 +16,7 @@
     align-items: center;
     gap: 20px;
     overflow-y: scroll;
+    overflow: hidden;
 
     h2 {
       font-size: 25px;
@@ -53,6 +54,7 @@
     align-items: center;
     gap: 20px;
     overflow-y: scroll;
+    overflow: hidden;
 
     .favourites-title {
         display: flex;

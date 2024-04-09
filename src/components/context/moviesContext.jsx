@@ -6,6 +6,10 @@ export const MoviesProvider = ({children}) => {
 
     const [movies, setMovies] = useState([]);
 
+    const updateMovies = (newMovies) => {
+        setMovies(newMovies);
+      };
+
 
     useEffect(() => {
         fetch('https://api-disney-six.vercel.app/movies')
@@ -17,7 +21,7 @@ export const MoviesProvider = ({children}) => {
     }, [])
 
     return (
-        <MoviesContext.Provider value={{movies}}>
+        <MoviesContext.Provider value={{movies, updateMovies}}>
             {children}
         </MoviesContext.Provider>
     )
